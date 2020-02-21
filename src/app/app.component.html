@@ -5,11 +5,13 @@
     </a>
   </div>
   <div class="categoriesList">
-    <a class="link">Tech</a>
+    <a class="link" (click)="getNews(technology)">Tech</a>
     <a class="link">Business</a>
     <a class="link">Entertainment</a>
     <a class="link">Sports</a>
   </div>
 </div>
 
-<app-news-feed></app-news-feed>
+<app-news-feed
+[articles]="articles"></app-news-feed>
+<!-- <router-outlet></router-outlet> -->

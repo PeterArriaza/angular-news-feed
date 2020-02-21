@@ -7,16 +7,17 @@ import { HttpClient } from "@angular/common/http";
 export class GetNewsService {
   API_KEY = "af28effcb90547f197975ef1061a2e3e";
 
-  public getNews() {
+  public getNews(category) {
+    if (!category) {
+      console.log("category", category);
     return this.httpClient.get(
       `https://newsapi.org/v2/top-headlines?country=us&apiKey=${this.API_KEY}`
-    );
-  }
-
-  public getTechNews() {
-    return this.httpClient.get(
-      `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${this.API_KEY}`
-    );
+    )
+    }
+    else {
+      console.log("category:", category);
+      return this.httpClient.get(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${this.API_KEY}`);
+    }
   }
 
   constructor(private httpClient: HttpClient) {}
