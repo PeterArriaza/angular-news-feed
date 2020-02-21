@@ -1,0 +1,15 @@
+<div *ngFor="let article of articles" class="articleContainer">
+  <h2>{{ article.title }}</h2>
+
+  <div class="articleDetail">
+    <div>
+      <img src="{{ article.urlToImage }}" />
+    </div>
+    <div class="articleText">
+      <p>
+        {{ article.description }}
+      </p>
+      <a href="{{ article.url }}">Read full article</a>
+    </div>
+  </div>
+</div>
